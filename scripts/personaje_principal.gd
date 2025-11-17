@@ -68,3 +68,8 @@ func _on_ataque_animation_finished():
 
 		# mantener flip correcto
 		$Visual.scale.x = -1 if last_direction < 0 else 1
+
+
+func _on_tp_inicio_body_entered(body: Node2D) -> void:
+	if body.name=="personaje principal":
+		body.global_position = get_node("/root/main/spawn_point").global_position

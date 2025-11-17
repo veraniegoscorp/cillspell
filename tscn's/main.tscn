@@ -1,17 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://p618rb7tf6lj"]
+[gd_scene load_steps=8 format=3 uid="uid://p618rb7tf6lj"]
 
+[ext_resource type="Texture2D" uid="uid://b4r1ltjaxh7r2" path="res://assets/tiles and background_foreground (new)/waterfall_anim_strip_4.png" id="1_pnyt4"]
 [ext_resource type="PackedScene" uid="uid://clcbrcihrqumc" path="res://tscn's/personaje principal.tscn" id="1_xcvfa"]
 [ext_resource type="PackedScene" uid="uid://pkuuggkcsred" path="res://tscn's/plataforma_cesped_1.tscn" id="2_hxwpe"]
+[ext_resource type="Texture2D" uid="uid://numx5fjuf7sw" path="res://assets/tiles and background_foreground (new)/bg_2.png" id="2_unw6c"]
 [ext_resource type="PackedScene" uid="uid://b3i73cksy31le" path="res://tscn's/suelo_cesped_1.tscn" id="3_5wvmb"]
 [ext_resource type="PackedScene" uid="uid://co0puo3tlql3f" path="res://tscn's/backround.tscn" id="4_5wvmb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxwpe"]
-size = Vector2(957, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnyt4"]
+size = Vector2(655, 20)
 
 [node name="main" type="Node2D"]
 
+[node name="WaterfallAnimStrip4" type="Sprite2D" parent="."]
+position = Vector2(270.5, 157.5)
+scale = Vector2(17.1094, 2.125)
+texture = ExtResource("1_pnyt4")
+
+[node name="Bg2" type="Sprite2D" parent="WaterfallAnimStrip4"]
+position = Vector2(0.204569, -23.2941)
+scale = Vector2(0.269589, 0.894118)
+texture = ExtResource("2_unw6c")
+
+[node name="backround" parent="WaterfallAnimStrip4" instance=ExtResource("4_5wvmb")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-16.0584, -95.2941)
+scale = Vector2(0.134551, 1.08235)
+
+[node name="backround2" parent="WaterfallAnimStrip4" instance=ExtResource("4_5wvmb")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(16.0438, -97.4777)
+scale = Vector2(0.134551, 1.08235)
+
 [node name="personaje principal" parent="." instance=ExtResource("1_xcvfa")]
 position = Vector2(-102, -47)
+
+[node name="tp_inicio" type="Area2D" parent="."]
+
+[node name="hitbox_tp" type="CollisionShape2D" parent="tp_inicio"]
+position = Vector2(47.5, 91)
+shape = SubResource("RectangleShape2D_pnyt4")
 
 [node name="suelos_1era_vuelta" type="Node2D" parent="."]
 
@@ -21,27 +51,18 @@ position = Vector2(-108, -22)
 [node name="plataforma cesped 2" parent="suelos_1era_vuelta" instance=ExtResource("2_hxwpe")]
 position = Vector2(-16, -27)
 
-[node name="suelo cesped 2" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
-position = Vector2(70, 23)
-
-[node name="suelo cesped 1" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
-position = Vector2(96, 19)
-scale = Vector2(2.02547, 1.06938)
-
-[node name="suelo cesped 3" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
-position = Vector2(130, 19)
-
-[node name="suelo cesped 4" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
-position = Vector2(234, 23)
-
 [node name="suelo cesped 5" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
-position = Vector2(330, 3)
+position = Vector2(252, 13)
 
-[node name="hitbox_muerte_avance" type="RigidBody2D" parent="."]
+[node name="suelo cesped 8" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
+position = Vector2(351, 17)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_muerte_avance"]
-position = Vector2(195, 132)
-shape = SubResource("RectangleShape2D_hxwpe")
+[node name="suelo cesped 7" parent="suelos_1era_vuelta" instance=ExtResource("3_5wvmb")]
+position = Vector2(72, 6)
+
+[node name="plataforma cesped 3" parent="suelos_1era_vuelta" instance=ExtResource("2_hxwpe")]
+position = Vector2(163, 7)
+scale = Vector2(0.785, 1.225)
 
 [node name="suelos_2da_vuelta" type="Node2D" parent="."]
 
@@ -63,7 +84,7 @@ position = Vector2(717, 23)
 [node name="plataforma cesped 6" parent="suelos_2da_vuelta" instance=ExtResource("2_hxwpe")]
 position = Vector2(760, 23)
 
-[node name="backround" parent="." instance=ExtResource("4_5wvmb")]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(-109, 56)
+[node name="spawn_point" type="Marker2D" parent="."]
+position = Vector2(-116, -40)
+
+[connection signal="body_entered" from="tp_inicio" to="personaje principal" method="_on_tp_inicio_body_entered"]
