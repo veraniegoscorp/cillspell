@@ -179,7 +179,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"atack",
-"speed": 8.0
+"speed": 15.0
 }]
 
 [node name="personaje principal" type="CharacterBody2D"]
@@ -204,6 +204,8 @@ frame_progress = 0.352005
 visible = false
 sprite_frames = SubResource("SpriteFrames_sdfr2")
 animation = &"atack"
+frame = 3
+frame_progress = 1.0
 offset = Vector2(6.42, 0)
 
 [connection signal="animation_finished" from="Visual/ataque" to="." method="_on_ataque_animation_finished"]
