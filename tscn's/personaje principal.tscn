@@ -143,7 +143,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 16.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gkwdj"]
@@ -191,13 +191,14 @@ scale = Vector2(1.1, 1.1)
 shape = SubResource("CapsuleShape2D_6ct3r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(6.455, 4.374)
+zoom = Vector2(5.25, 4.401)
 
 [node name="Visual" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"idle"
+animation = &"run"
+frame_progress = 0.352005
 
 [node name="ataque" type="AnimatedSprite2D" parent="Visual"]
 visible = false
