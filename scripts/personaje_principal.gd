@@ -72,16 +72,20 @@ func _on_ataque_animation_finished():
 
 func _on_tp_inicio_body_entered(body: Node2D) -> void:
 	if body.name=="personaje principal":
-		body.global_position = get_node("/root/main/spawn_point1").global_position
+		body.global_position = get_node("/root/main/markers/spawn_point1").global_position
 
 
 func _on_tp_segunda_vuelta_body_entered(body: Node2D) -> void:
 	if body.name=="personaje principal":
-		body.global_position = get_node("/root/main/spawn_point2").global_position
+		body.global_position = get_node("/root/main/markers/spawn_point2").global_position
 
 
 func _on_spawn_angel_body_entered(body: Node2D) -> void:
 	if body.name=="personaje principal":
-		var angel_node = get_node("/root/main/angel") # Ajusta la ruta si es diferente
+		var angel_node = get_node("/root/main/areas/angel") # Ajusta la ruta si es diferente
 		angel_node.visible = true
 		angel_node.velocidad_actual = angel_node.velocidad_normal
+		
+func _ready() -> void:
+	var camara_1= $Camera2D
+	camara_1.make_current()

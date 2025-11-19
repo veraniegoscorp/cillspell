@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://llxbiity7wcg"]
+
+[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/tiles and background_foreground (new)/black-background.png" id="1_ccely"]
+[ext_resource type="Texture2D" uid="uid://bkwqas1mb7jq5" path="res://assets/hud elements/hearts_hud.png" id="2_5ltdx"]
+[ext_resource type="Texture2D" uid="uid://4jumfu08jf4c" path="res://assets/hud elements/lost_hearts_anim_strip_5.png" id="3_8u4lh"]
+[ext_resource type="Texture2D" uid="uid://dno0ndyxhronu" path="res://assets/hud elements/no_hearts_hud.png" id="4_nlej4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feohr"]
+atlas = ExtResource("2_5ltdx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ril8e"]
+atlas = ExtResource("3_8u4lh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7kx0"]
+atlas = ExtResource("3_8u4lh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgbiu"]
+atlas = ExtResource("3_8u4lh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuh23"]
+atlas = ExtResource("3_8u4lh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk610"]
+atlas = ExtResource("3_8u4lh")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00sxf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feohr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ril8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7kx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgbiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuh23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk610")
+}],
+"loop": false,
+"name": &"lost_1_life",
+"speed": 8.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Black-background" type="Sprite2D" parent="."]
+position = Vector2(-23, 1)
+texture = ExtResource("1_ccely")
+
+[node name="HeartsHud2" type="AnimatedSprite2D" parent="Black-background"]
+position = Vector2(588, -1)
+scale = Vector2(21.9375, 20.625)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
+
+[node name="HeartsHud3" type="AnimatedSprite2D" parent="Black-background"]
+position = Vector2(-553, -1)
+scale = Vector2(21.9375, 20.625)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
+
+[node name="HeartsHud4" type="AnimatedSprite2D" parent="Black-background"]
+position = Vector2(23, -1)
+scale = Vector2(21.9375, 20.625)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
+
+[node name="NoHeartsHud" type="Sprite2D" parent="."]
+position = Vector2(565.04, -1)
+scale = Vector2(21.938, 20.625)
+texture = ExtResource("4_nlej4")
+
+[node name="NoHeartsHud2" type="Sprite2D" parent="NoHeartsHud"]
+position = Vector2(-52.012, 7.45058e-09)
+scale = Vector2(1, 1)
+texture = ExtResource("4_nlej4")
+
+[node name="NoHeartsHud3" type="Sprite2D" parent="NoHeartsHud"]
+position = Vector2(-25.7562, 0.0969697)
+scale = Vector2(1, 1)
+texture = ExtResource("4_nlej4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(-0.62, 0.615)

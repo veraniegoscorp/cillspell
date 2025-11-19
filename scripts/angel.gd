@@ -29,4 +29,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="personaje principal":
-		body.global_position = get_node("/root/main/spawn_point3").global_position
+		print("si entroa")
+		body.global_position = get_node("/root/main/markers/spawn_point3").global_position
+		queue_free()
