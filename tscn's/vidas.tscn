@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://llxbiity7wcg"]
 
-[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/tiles and background_foreground (new)/black-background.png" id="1_ccely"]
+[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="1_ccely"]
 [ext_resource type="Texture2D" uid="uid://bkwqas1mb7jq5" path="res://assets/hud elements/hearts_hud.png" id="2_5ltdx"]
 [ext_resource type="Texture2D" uid="uid://4jumfu08jf4c" path="res://assets/hud elements/lost_hearts_anim_strip_5.png" id="3_8u4lh"]
 [ext_resource type="Texture2D" uid="uid://dno0ndyxhronu" path="res://assets/hud elements/no_hearts_hud.png" id="4_nlej4"]
@@ -86,12 +86,10 @@ texture = ExtResource("4_nlej4")
 
 [node name="NoHeartsHud2" type="Sprite2D" parent="NoHeartsHud"]
 position = Vector2(-52.012, 7.45058e-09)
-scale = Vector2(1, 1)
 texture = ExtResource("4_nlej4")
 
 [node name="NoHeartsHud3" type="Sprite2D" parent="NoHeartsHud"]
 position = Vector2(-25.7562, 0.0969697)
-scale = Vector2(1, 1)
 texture = ExtResource("4_nlej4")
 
 [node name="Camera2D" type="Camera2D" parent="."]

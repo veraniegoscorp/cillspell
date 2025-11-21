@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwx53ywd7mtsy"]
+
+[ext_resource type="AudioStream" uid="uid://dfv6fo5vs4vc8" path="res://assets/music_and_sfx/Wind Sound SOUND EFFECT - No Copyright[Download Free].mp3" id="1_c86ef"]
+[ext_resource type="AudioStream" uid="uid://dhbg5lc4dtntr" path="res://assets/music_and_sfx/sfx/8-bit-jump-sound-effect-copyright-free_b7tdqw7Q.ogg" id="2_w8n73"]
+[ext_resource type="AudioStream" uid="uid://bqov2qgssfwar" path="res://assets/music_and_sfx/strange_sky.mp3" id="3_w8n73"]
+
+[node name="music_and_sounds" type="Node2D"]
+
+[node name="wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_c86ef")
+volume_db = 10.0
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_w8n73")
+volume_db = -17.079
+
+[node name="strange_sky" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w8n73")
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]

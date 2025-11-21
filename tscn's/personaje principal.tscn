@@ -1,11 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://clcbrcihrqumc"]
+[gd_scene load_steps=39 format=3 uid="uid://clcbrcihrqumc"]
 
-[ext_resource type="Texture2D" uid="uid://hw88wv2stwtx" path="res://assets/herochar sprites(new)/herochar_sword_attack_anim_strip_4.png" id="1_5neme"]
+[ext_resource type="Texture2D" uid="uid://hw88wv2stwtx" path="res://assets/personaje principal assets/herochar_sword_attack_anim_strip_4.png" id="1_5neme"]
 [ext_resource type="Script" uid="uid://g7bt7s617cys" path="res://scripts/personaje_principal.gd" id="1_gkwdj"]
-[ext_resource type="Texture2D" uid="uid://cp6swuuggcbid" path="res://assets/herochar sprites(new)/herochar_idle_anim_strip_4.png" id="2_gkwdj"]
-[ext_resource type="Texture2D" uid="uid://carlc0fl1xitq" path="res://assets/herochar sprites(new)/herochar_jump_down_anim_strip_3.png" id="3_ffcaa"]
-[ext_resource type="Texture2D" uid="uid://b45vkjoudpq8w" path="res://assets/herochar sprites(new)/herochar_jump_up_anim_strip_3.png" id="4_2bnaf"]
-[ext_resource type="Texture2D" uid="uid://bjr0yg0n66prl" path="res://assets/herochar sprites(new)/herochar_run_anim_strip_6.png" id="5_xh3ip"]
+[ext_resource type="Texture2D" uid="uid://cp6swuuggcbid" path="res://assets/personaje principal assets/herochar_idle_anim_strip_4.png" id="2_gkwdj"]
+[ext_resource type="Texture2D" uid="uid://carlc0fl1xitq" path="res://assets/personaje principal assets/herochar_jump_down_anim_strip_3.png" id="3_ffcaa"]
+[ext_resource type="Texture2D" uid="uid://b45vkjoudpq8w" path="res://assets/personaje principal assets/herochar_jump_up_anim_strip_3.png" id="4_2bnaf"]
+[ext_resource type="Texture2D" uid="uid://bjr0yg0n66prl" path="res://assets/personaje principal assets/herochar_run_anim_strip_6.png" id="5_xh3ip"]
+[ext_resource type="Texture2D" uid="uid://vfx1nx04bwkg" path="res://assets/personaje principal assets/herochar_jump_double_anim_strip_3.png" id="7_2bnaf"]
+[ext_resource type="Texture2D" uid="uid://w6pt7nbhcg3i" path="res://assets/personaje principal assets/herochar_hit_anim_strip_3.png" id="8_xh3ip"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ct3r"]
 radius = 5.0
@@ -162,6 +164,30 @@ region = Rect2(64, 0, 32, 16)
 atlas = ExtResource("1_5neme")
 region = Rect2(96, 0, 32, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdfr2"]
+atlas = ExtResource("7_2bnaf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlpsm"]
+atlas = ExtResource("7_2bnaf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws3ne"]
+atlas = ExtResource("7_2bnaf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mig3w"]
+atlas = ExtResource("8_xh3ip")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0rri"]
+atlas = ExtResource("8_xh3ip")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji0kv"]
+atlas = ExtResource("8_xh3ip")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sdfr2"]
 animations = [{
 "frames": [{
@@ -179,8 +205,34 @@ animations = [{
 }],
 "loop": false,
 "name": &"atack",
-"speed": 15.0
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdfr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlpsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws3ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mig3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0rri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji0kv")
+}],
+"loop": false,
+"name": &"knockback",
+"speed": 12.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkwdj"]
+size = Vector2(14, 12.5)
 
 [node name="personaje principal" type="CharacterBody2D"]
 script = ExtResource("1_gkwdj")
@@ -197,15 +249,19 @@ zoom = Vector2(5.25, 4.401)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visual"]
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"run"
-frame_progress = 0.352005
+animation = &"idle"
 
 [node name="ataque" type="AnimatedSprite2D" parent="Visual"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_sdfr2")
-animation = &"atack"
-frame = 3
-frame_progress = 1.0
+animation = &"knockback"
 offset = Vector2(6.42, 0)
 
+[node name="attack_colider" type="Area2D" parent="Visual/ataque"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visual/ataque/attack_colider"]
+position = Vector2(14, 1)
+shape = SubResource("RectangleShape2D_gkwdj")
+
 [connection signal="animation_finished" from="Visual/ataque" to="." method="_on_ataque_animation_finished"]
+[connection signal="area_entered" from="Visual/ataque/attack_colider" to="." method="_on_attack_colider_area_entered"]

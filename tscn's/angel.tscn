@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://df582g2g6xued"]
 
-[ext_resource type="Texture2D" uid="uid://cep6pv1k8bwia" path="res://assets/enemies assets/alas_angel.webp" id="1_ngxkm"]
+[ext_resource type="Texture2D" uid="uid://cep6pv1k8bwia" path="res://assets/enemies assets/enemies sprites/alas_angel.webp" id="1_ngxkm"]
 [ext_resource type="Script" uid="uid://bxb8yx2a7a436" path="res://scripts/angel.gd" id="1_w6nyr"]
-[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/tiles and background_foreground (new)/black-background.png" id="2_w6nyr"]
+[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="2_w6nyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtt2g"]
-size = Vector2(26, 99)
+size = Vector2(67, 99)
 
 [node name="angel" type="Area2D"]
 script = ExtResource("1_w6nyr")
@@ -30,7 +30,7 @@ scale = Vector2(0.0229167, 0.0814815)
 texture = ExtResource("2_w6nyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17, -6.5)
+position = Vector2(-12.5, -5)
 shape = SubResource("RectangleShape2D_wtt2g")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
