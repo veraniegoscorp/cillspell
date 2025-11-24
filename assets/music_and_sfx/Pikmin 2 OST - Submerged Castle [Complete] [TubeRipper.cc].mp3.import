@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p8v0k0kdkn2x"
+path="res://.godot/imported/Pikmin 2 OST - Submerged Castle [Complete] [TubeRipper.cc].mp3-7711104d56eea20cd79eb0e04e9f7e2a.mp3str"
+
+[deps]
+
+source_file="res://assets/music_and_sfx/Pikmin 2 OST - Submerged Castle [Complete] [TubeRipper.cc].mp3"
+dest_files=["res://.godot/imported/Pikmin 2 OST - Submerged Castle [Complete] [TubeRipper.cc].mp3-7711104d56eea20cd79eb0e04e9f7e2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

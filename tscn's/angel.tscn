@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://df582g2g6xued"]
+[gd_scene load_steps=9 format=3 uid="uid://df582g2g6xued"]
 
 [ext_resource type="Texture2D" uid="uid://cep6pv1k8bwia" path="res://assets/enemies assets/enemies sprites/alas_angel.webp" id="1_ngxkm"]
 [ext_resource type="Script" uid="uid://bxb8yx2a7a436" path="res://scripts/angel.gd" id="1_w6nyr"]
 [ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="2_w6nyr"]
+[ext_resource type="Shader" uid="uid://b5w3r7mhab1bb" path="res://tscn's/ala_derecha_angel.gdshader" id="2_wtt2g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q10a8"]
+shader = ExtResource("2_wtt2g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6l1y7"]
+shader = ExtResource("2_wtt2g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtt2g"]
+shader = ExtResource("2_wtt2g")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtt2g"]
 size = Vector2(67, 99)
@@ -11,6 +21,7 @@ size = Vector2(67, 99)
 script = ExtResource("1_w6nyr")
 
 [node name="AlasAngel" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_q10a8")
 position = Vector2(-60, -20)
 scale = Vector2(0.271906, 0.295058)
 texture = ExtResource("1_ngxkm")
@@ -18,6 +29,7 @@ region_enabled = true
 region_rect = Rect2(111, 64, 307, 324)
 
 [node name="AlasAngel2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6l1y7")
 position = Vector2(41, -22)
 scale = Vector2(0.271906, 0.295058)
 texture = ExtResource("1_ngxkm")
@@ -25,6 +37,7 @@ region_enabled = true
 region_rect = Rect2(425, 32, 335, 364)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wtt2g")
 position = Vector2(-10, -4)
 scale = Vector2(0.0229167, 0.0814815)
 texture = ExtResource("2_w6nyr")

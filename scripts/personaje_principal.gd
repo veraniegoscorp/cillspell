@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 
 func _start_attack():
 	attacking = true
+	$music_and_sounds/slash.play()
 	$Visual/ataque/attack_colider/CollisionShape2D.disabled =false;
 
 	# detener movimiento
@@ -89,12 +90,19 @@ func _on_tp_segunda_vuelta_body_entered(body: Node2D) -> void:
 
 #logica del angel
 func _on_spawn_angel_body_entered(body: Node2D) -> void:
-	if body.name=="personaje principal":
-		var angel_node = get_node("/root/main/areas/angel") # Ajusta la ruta si es diferente
+	if body.name == "personaje principal":
+		var angel_node = get_node("/root/main/areas/angel")
 		body.global_position = get_node("/root/main/markers/spawn_point2").global_position
 		angel_node.visible = true
 		angel_node.velocidad_actual = angel_node.velocidad_normal
-
+		$CanvasModulate.visible = false
+		$PointLight2D.visible=false
+		$"music_and_sounds/SonidoPersecucion".stop()
+		#logica de la musica (a futuro)
+		
+		
+		
+		
 #logica de la camara
 func _ready() -> void:
 	var camara_1= $Camera2D
@@ -127,11 +135,12 @@ func _on_oscurecersky_body_entered(body: Node2D) -> void:
 		$PointLight2D.energy=0.0
 		var ligth_tween= create_tween()
 		ligth_tween.tween_property($PointLight2D,"energy",1.0,1.5)
+		$music_and_sounds/strange_sky.stop()
 		
 
 
 func _on_attack_colider_area_entered(area: Area2D) -> void:
 	if area.name == "barrier_world":
-		var knockback = Vector2(-200, 0)  # empuja hacia la izquierda
+		var knockback = Vector2(-250, 0)  # empuja hacia la izquierda
 		$Visual/ataque.play("knockback")
 		velocity = knockback

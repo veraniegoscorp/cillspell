@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://llxbiity7wcg"]
+[gd_scene load_steps=13 format=3 uid="uid://llxbiity7wcg"]
 
+[ext_resource type="Script" uid="uid://ctc5sbjmjx8wi" path="res://scripts/vidas.gd" id="1_5ltdx"]
 [ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="1_ccely"]
 [ext_resource type="Texture2D" uid="uid://bkwqas1mb7jq5" path="res://assets/hud elements/hearts_hud.png" id="2_5ltdx"]
 [ext_resource type="Texture2D" uid="uid://4jumfu08jf4c" path="res://assets/hud elements/lost_hearts_anim_strip_5.png" id="3_8u4lh"]
@@ -55,42 +56,41 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="vida_animation" type="Node2D"]
+script = ExtResource("1_5ltdx")
 
 [node name="Black-background" type="Sprite2D" parent="."]
 position = Vector2(-23, 1)
 texture = ExtResource("1_ccely")
 
-[node name="HeartsHud2" type="AnimatedSprite2D" parent="Black-background"]
-position = Vector2(588, -1)
-scale = Vector2(21.9375, 20.625)
-sprite_frames = SubResource("SpriteFrames_00sxf")
-animation = &"lost_1_life"
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(-0.62, 0.615)
 
-[node name="HeartsHud3" type="AnimatedSprite2D" parent="Black-background"]
-position = Vector2(-553, -1)
-scale = Vector2(21.9375, 20.625)
-sprite_frames = SubResource("SpriteFrames_00sxf")
-animation = &"lost_1_life"
-
-[node name="HeartsHud4" type="AnimatedSprite2D" parent="Black-background"]
-position = Vector2(23, -1)
-scale = Vector2(21.9375, 20.625)
-sprite_frames = SubResource("SpriteFrames_00sxf")
-animation = &"lost_1_life"
-
-[node name="NoHeartsHud" type="Sprite2D" parent="."]
-position = Vector2(565.04, -1)
+[node name="cora_emp 1" type="Sprite2D" parent="."]
+position = Vector2(-575.999, -1)
 scale = Vector2(21.938, 20.625)
 texture = ExtResource("4_nlej4")
 
-[node name="NoHeartsHud2" type="Sprite2D" parent="NoHeartsHud"]
-position = Vector2(-52.012, 7.45058e-09)
+[node name="cora_emp 2" type="Sprite2D" parent="cora_emp 1"]
+position = Vector2(26.2558, 0.0969697)
 texture = ExtResource("4_nlej4")
 
-[node name="NoHeartsHud3" type="Sprite2D" parent="NoHeartsHud"]
-position = Vector2(-25.7562, 0.0969697)
+[node name="cora_emp 3" type="Sprite2D" parent="cora_emp 1"]
+position = Vector2(52.012, -7.45058e-09)
 texture = ExtResource("4_nlej4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(-0.62, 0.615)
+[node name="cora 1" type="AnimatedSprite2D" parent="."]
+position = Vector2(-576, 0)
+scale = Vector2(21.9375, 20.625)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
+
+[node name="cora 2" type="AnimatedSprite2D" parent="cora 1"]
+position = Vector2(26.2564, 0)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
+
+[node name="cora 3" type="AnimatedSprite2D" parent="cora 1"]
+position = Vector2(52.0114, 0)
+sprite_frames = SubResource("SpriteFrames_00sxf")
+animation = &"lost_1_life"
