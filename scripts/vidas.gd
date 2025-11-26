@@ -9,15 +9,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func perdida_vida():
 	corazones -= 1
-	var corazon_anim : AnimatedSprite2D
-	match corazones:
-		2:
-			$cora_1.play("lost_1_life")
-		1:
-			$cora_2.play("lost_1_life")
-		0:
-			$cora_3.play("lost_1_life")
-	# Reproducimos la animación
-	corazon_anim.play("lost_1_life")
-	await corazon_anim.animation_finished
-	corazon_anim.visible = false
+	$camara_vidas.make_current()
+	if corazones == 2:
+		$"cora 1".play("lost_1_life")
+		await $"cora 1".animation_finished
+		$"cora 1".visible = false
+
+	elif corazones == 1:
+		$"cora 2".play("lost_1_life")
+		await $"cora 2".animation_finished
+		$"cora 2".visible = false
+
+	elif corazones == 0:
+		$"cora 3".play("lost_1_life")
+		await $"cora 3".animation_finished
+		$"cora 3".visible = false

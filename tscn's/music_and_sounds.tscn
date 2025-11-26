@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwx53ywd7mtsy"]
+[gd_scene load_steps=16 format=3 uid="uid://bwx53ywd7mtsy"]
 
 [ext_resource type="AudioStream" uid="uid://dfv6fo5vs4vc8" path="res://assets/music_and_sfx/Wind Sound SOUND EFFECT - No Copyright[Download Free].mp3" id="1_c86ef"]
 [ext_resource type="AudioStream" uid="uid://dhbg5lc4dtntr" path="res://assets/music_and_sfx/sfx/8-bit-jump-sound-effect-copyright-free_b7tdqw7Q.ogg" id="2_w8n73"]
@@ -8,6 +8,13 @@
 [ext_resource type="AudioStream" uid="uid://p8v0k0kdkn2x" path="res://assets/music_and_sfx/Pikmin 2 OST - Submerged Castle [Complete] [TubeRipper.cc].mp3" id="6_bcbj6"]
 [ext_resource type="AudioStream" uid="uid://dkba2w03de1en" path="res://assets/music_and_sfx/sfx/sonido_persecucion.ogg" id="7_afr1l"]
 [ext_resource type="AudioStream" uid="uid://rqhcvcp8ux5l" path="res://assets/music_and_sfx/sfx/pisadas lentas.ogg" id="8_pawyj"]
+[ext_resource type="AudioStream" uid="uid://cwfegmm5i68dd" path="res://assets/music_and_sfx/Cave ambience by Jross aka Xeltic89! enjoy! (1).mp3" id="9_pawyj"]
+[ext_resource type="AudioStream" uid="uid://bj7wjp3o4w33h" path="res://assets/music_and_sfx/Cave Steps Reverb SOUND EFFECTS.mp3" id="10_ufevx"]
+[ext_resource type="AudioStream" uid="uid://kkhcmvqhynmh" path="res://assets/music_and_sfx/Crowd Whisper SOUND Effect.mp3" id="11_wjkqu"]
+[ext_resource type="AudioStream" uid="uid://bb0yoxiab85fh" path="res://assets/music_and_sfx/Slow breathing sound effect.mp3" id="12_fa118"]
+[ext_resource type="AudioStream" uid="uid://bn4ayt8hd42q6" path="res://assets/music_and_sfx/scary-whisper-breathing-sound-effect_ANg04WIB.mp3" id="13_biyhj"]
+[ext_resource type="AudioStream" uid="uid://bvbu268ghrvk5" path="res://assets/music_and_sfx/1-hour-horror-whispering-ghost-talking-sound-c2xjnm8ydbu_YdsyBxUS.mp3" id="14_uqpu5"]
+[ext_resource type="AudioStream" uid="uid://dm5le4oiyk15q" path="res://assets/music_and_sfx/tortured-distorted-scream-sound-effect-865-tuberippercc_SWVv96Qk.ogg" id="15_wjkqu"]
 
 [node name="music_and_sounds" type="Node2D"]
 
@@ -21,6 +28,7 @@ volume_db = -17.079
 
 [node name="strange_sky" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_w8n73")
+volume_db = 2.476
 
 [node name="hit_wall" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_v21e2")
@@ -31,14 +39,35 @@ stream = ExtResource("5_bcbj6")
 
 [node name="pimin_cave" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bcbj6")
-volume_db = -15.84
+volume_db = -4.597
 
 [node name="SonidoPersecucion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_afr1l")
-volume_db = 0.462
-pitch_scale = 0.33
+volume_db = -0.471
+pitch_scale = 0.39
 
 [node name="PisadasLentas" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_pawyj")
 volume_db = -3.792
 pitch_scale = 0.35
+
+[node name="cave_backround_ambience_aud" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_pawyj")
+
+[node name="pasos_cuevas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ufevx")
+
+[node name="whispers_back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wjkqu")
+
+[node name="breathing_back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fa118")
+
+[node name="main_breathing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_biyhj")
+
+[node name="main_whispers" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_uqpu5")
+
+[node name="scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_wjkqu")

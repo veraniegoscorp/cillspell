@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://df582g2g6xued"]
+[gd_scene load_steps=10 format=3 uid="uid://df582g2g6xued"]
 
 [ext_resource type="Texture2D" uid="uid://cep6pv1k8bwia" path="res://assets/enemies assets/enemies sprites/alas_angel.webp" id="1_ngxkm"]
 [ext_resource type="Script" uid="uid://bxb8yx2a7a436" path="res://scripts/angel.gd" id="1_w6nyr"]
 [ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="2_w6nyr"]
-[ext_resource type="Shader" uid="uid://b5w3r7mhab1bb" path="res://tscn's/ala_derecha_angel.gdshader" id="2_wtt2g"]
+[ext_resource type="Shader" uid="uid://b5w3r7mhab1bb" path="res://scripts/ala_derecha_angel.gdshader" id="2_wtt2g"]
+[ext_resource type="Texture2D" uid="uid://dt6hhdffndj3g" path="res://assets/enemies assets/enemies sprites/ill-use-this-for-analog-horror-v0-ipkm1ovzfwff1.png" id="5_q10a8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q10a8"]
 shader = ExtResource("2_wtt2g")
@@ -41,6 +42,11 @@ material = SubResource("ShaderMaterial_wtt2g")
 position = Vector2(-10, -4)
 scale = Vector2(0.0229167, 0.0814815)
 texture = ExtResource("2_w6nyr")
+
+[node name="Ill-use-this-for-analog-horror-v0-ipkm1Ovzfwff1" type="Sprite2D" parent="."]
+position = Vector2(-9.875, -3.5)
+scale = Vector2(0.210227, 0.388889)
+texture = ExtResource("5_q10a8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12.5, -5)

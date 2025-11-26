@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb0yoxiab85fh"
+path="res://.godot/imported/Slow breathing sound effect.mp3-89a848b37f7270ca6307e9804cd8e78f.mp3str"
+
+[deps]
+
+source_file="res://assets/music_and_sfx/Slow breathing sound effect.mp3"
+dest_files=["res://.godot/imported/Slow breathing sound effect.mp3-89a848b37f7270ca6307e9804cd8e78f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

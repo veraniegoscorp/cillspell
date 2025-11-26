@@ -52,5 +52,10 @@ func _on_pinmin_musi_body_entered(body: Node2D) -> void:
 		tween.tween_property(
 			audio, 
 			"volume_db", 
-			audio.volume_db - 5,  # Baja 5 dB
+			audio.volume_db - 2,  # Baja 2 dB
 			2.0)
+
+
+func _on_respawn_body_entered(body: Node2D) -> void:
+	if body.name == "personaje principal":
+		body.global_position = get_node("/root/main/markers/spawn_point2").global_position

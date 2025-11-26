@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 125.0
+var SPEED = 125.0
 const JUMP_VELOCITY = -250.0
 
 var attacking = false
@@ -84,20 +84,22 @@ func _on_tp_inicio_body_entered(body: Node2D) -> void:
 func _on_tp_segunda_vuelta_body_entered(body: Node2D) -> void:
 	if body.name=="personaje principal":
 		$music_and_sounds/wind.stop()
+		var vida_node = get_node("/root/main/vida_animation")
+		await vida_node.perdida_vida()
 		body.global_position = get_node("/root/main/markers/spawn_point2").global_position
+		$Camera2D.make_current()
 
 
 
 #logica del angel
 func _on_spawn_angel_body_entered(body: Node2D) -> void:
 	if body.name == "personaje principal":
+		$CanvasModulate.visible = false
+		$PointLight2D.visible=false
 		var angel_node = get_node("/root/main/areas/angel")
 		body.global_position = get_node("/root/main/markers/spawn_point2").global_position
 		angel_node.visible = true
 		angel_node.velocidad_actual = angel_node.velocidad_normal
-		$CanvasModulate.visible = false
-		$PointLight2D.visible=false
-		$"music_and_sounds/SonidoPersecucion".stop()
 		#logica de la musica (a futuro)
 		
 		
@@ -144,3 +146,52 @@ func _on_attack_colider_area_entered(area: Area2D) -> void:
 		var knockback = Vector2(-250, 0)  # empuja hacia la izquierda
 		$Visual/ataque.play("knockback")
 		velocity = knockback
+
+
+func _on_cave_ambience_body_entered(body: Node2D) -> void:
+	if body.name == "personaje principal":
+
+		SPEED = 80
+		$CanvasModulate.visible = true
+		$PointLight2D.visible = true
+		$PointLight2D.energy = 0.0
+
+		var light_tween = create_tween()
+		light_tween.tween_property($PointLight2D, "energy", 1.0, 1.5)
+
+		$music_and_sounds/strange_sky.stop()
+		$music_and_sounds/cave_backround_ambience_aud.play()
+
+		# --- ESPERA 1 ---
+		var t1 = create_tween()
+		t1.tween_interval(3.0)
+		await t1.finished
+
+		$music_and_sounds/breathing_back.play()
+
+		# --- ESPERA 2 ---
+		var t2 = create_tween()
+		t2.tween_interval(3.0)
+		await t2.finished
+
+		$music_and_sounds/whispers_back.play()
+
+		# --- ESPERA 3 ---
+		var t3 = create_tween()
+		t3.tween_interval(3.0)
+		await t3.finished
+
+		$music_and_sounds/main_whispers.play()
+		$music_and_sounds/main_breathing.play()
+
+		# --- ESPERA 4 ---
+		var t4 = create_tween()
+		t4.tween_interval(5.0)
+		await t4.finished
+
+		$music_and_sounds/pasos_cuevas.play()
+		
+		var t5 = create_tween()
+		t5.tween_interval(2.0)
+		await t5.finished
+		$music_and_sounds/scream.play()

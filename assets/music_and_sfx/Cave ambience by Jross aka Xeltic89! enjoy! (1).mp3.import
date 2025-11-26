@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwfegmm5i68dd"
+path="res://.godot/imported/Cave ambience by Jross aka Xeltic89! enjoy! (1).mp3-e1fad8cf0386c1005c86acfadb3a0eaa.mp3str"
+
+[deps]
+
+source_file="res://assets/music_and_sfx/Cave ambience by Jross aka Xeltic89! enjoy! (1).mp3"
+dest_files=["res://.godot/imported/Cave ambience by Jross aka Xeltic89! enjoy! (1).mp3-e1fad8cf0386c1005c86acfadb3a0eaa.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
