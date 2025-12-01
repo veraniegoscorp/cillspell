@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://by8n7fw4nyw7q"]
+
+[ext_resource type="Script" uid="uid://cik3wbgqip4ds" path="res://scripts/fin_juego.gd" id="1_x72mo"]
+[ext_resource type="Texture2D" uid="uid://cc3ku3jklg2fq" path="res://assets/backrounds/black-background.png" id="2_wjbb8"]
+[ext_resource type="PackedScene" uid="uid://bwx53ywd7mtsy" path="res://tscn's/music_and_sounds.tscn" id="3_gt0qx"]
+
+[node name="fin_juego" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x72mo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Black-background" type="Sprite2D" parent="."]
+position = Vector2(-38, -9)
+texture = ExtResource("2_wjbb8")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -400.0
+offset_top = -44.0
+offset_right = -149.03
+offset_bottom = -13.0
+scale = Vector2(3.165, 3.165)
+text = "https://tinyurl.com/bdha8kfh"
+
+[node name="music_and_sounds" parent="." instance=ExtResource("3_gt0qx")]
+position = Vector2(-5, -25)

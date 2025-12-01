@@ -745,7 +745,7 @@ position = Vector2(1054, -39)
 position = Vector2(2298, -7)
 
 [node name="personaje principal" parent="." instance=ExtResource("1_xcvfa")]
-position = Vector2(1346, 405)
+position = Vector2(1279, 400)
 
 [node name="music_and_sounds" parent="personaje principal" instance=ExtResource("14_af3xk")]
 position = Vector2(-165, -65)
@@ -850,7 +850,7 @@ position = Vector2(-401, 394)
 shape = SubResource("CircleShape2D_rjmxc")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1208, 401)
+position = Vector2(1179.97, 404)
 scale = Vector2(8.12402, 2.125)
 texture = SubResource("GradientTexture2D_kfdgv")
 

@@ -96,6 +96,7 @@ func _on_spawn_angel_body_entered(body: Node2D) -> void:
 	if body.name == "personaje principal":
 		$CanvasModulate.visible = false
 		$PointLight2D.visible=false
+		$music_and_sounds/SonidoPersecucion.stop()
 		var angel_node = get_node("/root/main/areas/angel")
 		body.global_position = get_node("/root/main/markers/spawn_point2").global_position
 		angel_node.visible = true
@@ -128,16 +129,12 @@ func _on_strange_sky_body_entered(body: Node2D) -> void:
 
 func _on_oscurecersky_body_entered(body: Node2D) -> void:
 	if body.name == "personaje principal":
-		var tween = create_tween()
-		tween.tween_property($"CanvasModulate", "color", Color(0,0,0,0.6),2 )
-		var music_tween = create_tween()
-		music_tween.tween_property($music_and_sounds/strange_sky, "volume_db", -30, 2) # -30 dB ≈ silencio
-		await tween.finished
-		$PointLight2D.visible=true
-		$PointLight2D.energy=0.0
-		var ligth_tween= create_tween()
-		ligth_tween.tween_property($PointLight2D,"energy",1.0,1.5)
-		$music_and_sounds/strange_sky.stop()
+		$CanvasModulate.visible = true
+		$PointLight2D.visible = true
+		$PointLight2D.energy = 0.0
+
+		var light_tween = create_tween()
+		light_tween.tween_property($PointLight2D, "energy", 1.0, 1.5)
 		
 
 

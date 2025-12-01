@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwx53ywd7mtsy"]
+[gd_scene load_steps=17 format=3 uid="uid://bwx53ywd7mtsy"]
 
 [ext_resource type="AudioStream" uid="uid://dfv6fo5vs4vc8" path="res://assets/music_and_sfx/Wind Sound SOUND EFFECT - No Copyright[Download Free].mp3" id="1_c86ef"]
 [ext_resource type="AudioStream" uid="uid://dhbg5lc4dtntr" path="res://assets/music_and_sfx/sfx/8-bit-jump-sound-effect-copyright-free_b7tdqw7Q.ogg" id="2_w8n73"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bn4ayt8hd42q6" path="res://assets/music_and_sfx/scary-whisper-breathing-sound-effect_ANg04WIB.mp3" id="13_biyhj"]
 [ext_resource type="AudioStream" uid="uid://bvbu268ghrvk5" path="res://assets/music_and_sfx/1-hour-horror-whispering-ghost-talking-sound-c2xjnm8ydbu_YdsyBxUS.mp3" id="14_uqpu5"]
 [ext_resource type="AudioStream" uid="uid://dm5le4oiyk15q" path="res://assets/music_and_sfx/tortured-distorted-scream-sound-effect-865-tuberippercc_SWVv96Qk.ogg" id="15_wjkqu"]
+[ext_resource type="AudioStream" uid="uid://bag4mjir0b78g" path="res://assets/music_and_sfx/e0f1-ebad-4012-85cc-13eb4621342b.mp3" id="16_fa118"]
 
 [node name="music_and_sounds" type="Node2D"]
 
@@ -71,3 +72,7 @@ stream = ExtResource("14_uqpu5")
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_wjkqu")
+
+[node name="static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_fa118")
+volume_db = 6.19

@@ -14,6 +14,10 @@ config/name="cillspell"
 run/main_scene="uid://p618rb7tf6lj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [file_customization]
 
 folder_colors={
