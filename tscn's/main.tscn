@@ -745,7 +745,7 @@ position = Vector2(1054, -39)
 position = Vector2(2298, -7)
 
 [node name="personaje principal" parent="." instance=ExtResource("1_xcvfa")]
-position = Vector2(1346, 405)
+position = Vector2(-90, -68)
 
 [node name="music_and_sounds" parent="personaje principal" instance=ExtResource("14_af3xk")]
 position = Vector2(-165, -65)
